@@ -1,0 +1,16 @@
+package Mobile_Automation.PageObject;
+
+import org.openqa.selenium.support.PageFactory;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.android.AndroidDriver;
+
+public class ProductPage {
+
+	public AndroidDriver driver;
+	public ProductPage(AndroidDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver),this);
+	}
+	
+	@AndroidFindBy(xpath="")
+}

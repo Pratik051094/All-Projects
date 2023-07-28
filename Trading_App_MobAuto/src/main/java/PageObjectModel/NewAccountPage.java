@@ -1,0 +1,149 @@
+package PageObjectModel;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import Utils.AndroidActions;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+
+public class NewAccountPage extends AndroidActions {
+
+	public AndroidDriver driver;
+
+	public NewAccountPage(AndroidDriver driver) {
+		super(driver);
+		this.driver = driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/inputId_nameValue")
+	private WebElement FullnameField;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/inputId_emailValue")
+	private WebElement EmailField;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/inputId_passwordValue")
+	private WebElement PasswordField;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/inputId_confirmPasswordValue")
+	private WebElement ConfirmPasswordField;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/countrySpinner")
+	private WebElement CountryDropDown;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Italy']")
+	private WebElement CountryName;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/securityQuestionOne")
+	private WebElement SecurityQuestionOneDropDown;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Last name of your favorite teacher?']")
+	private WebElement SecurityQuestionOne;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/inputId_firstSecurityAnswer")
+	private WebElement FirstSecurityAns;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/securityQuestionTwo")
+	private WebElement SecurityQuestionSecondDropDown;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Your childhood hero?']")
+	private WebElement SecurityQuestionSecond;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/inputId_secondSecurityAnswer")
+	private WebElement SecondSecurityAns;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/securityQuestionThree")
+	private WebElement SecurityQuestionThirdDropDown;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='In which city did your parents meet?']")
+	private WebElement SecurityQuestionThird;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/inputId_thirdSecurityAnswer")
+	private WebElement ThridSecurityAns;
+
+	@AndroidFindBy(id = "com.alifesoftware.stocktrainer:id/registerButton")
+	private WebElement ResigerButton;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='GREAT']")
+	private WebElement GreatButton;
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='OK']")
+	private WebElement OkButton;
+
+	// android.widget.TextView[@text='BUMMER']
+
+	@AndroidFindBy(xpath = "//android.widget.TextView[@text='BUMMER']")
+	private WebElement BummerButton;
+
+	public void CreateNewaccount() {
+		FullnameField.sendKeys("Pratik meher");
+		EmailField.sendKeys("pmeher@gmail.com");
+		PasswordField.sendKeys("Pratik@05");
+		ConfirmPasswordField.sendKeys("Pratik@05");
+		CountryDropDown.click();
+		ScrollIntoText("Italy");
+		CountryName.click();
+		SecurityQuestionOneDropDown.click();
+		ScrollIntoText("Last name of your favorite teacher?");
+		SecurityQuestionOne.click();
+		FirstSecurityAns.sendKeys("abc");
+		SecurityQuestionSecondDropDown.click();
+		ScrollIntoText("Your childhood hero?");
+		SecurityQuestionSecond.click();
+		SecondSecurityAns.sendKeys("xyz");
+		ScrollIntoText("REGISTER NEW ACCOUNT");
+		SecurityQuestionThirdDropDown.click();
+		ScrollIntoText("In which city did your parents meet?");
+		SecurityQuestionThird.click();
+		ThridSecurityAns.sendKeys("abcde");
+		ResigerButton.click();
+
+	}
+
+	public void CreateNewaccountWithMissingField() throws InterruptedException {
+		FullnameField.sendKeys("Pratik meher");
+		PasswordField.sendKeys("Pratik@05");
+		ConfirmPasswordField.sendKeys("Pratik@05");
+		CountryDropDown.click();
+		ScrollIntoText("Italy");
+		CountryName.click();
+		SecurityQuestionOneDropDown.click();
+		ScrollIntoText("Last name of your favorite teacher?");
+		SecurityQuestionOne.click();
+		FirstSecurityAns.sendKeys("abc");
+		SecurityQuestionSecondDropDown.click();
+		ScrollIntoText("Your childhood hero?");
+		SecurityQuestionSecond.click();
+		SecondSecurityAns.sendKeys("xyz");
+		ScrollIntoText("REGISTER NEW ACCOUNT");
+		SecurityQuestionThirdDropDown.click();
+		ScrollIntoText("In which city did your parents meet?");
+		SecurityQuestionThird.click();
+		ThridSecurityAns.sendKeys("abcde");
+		ResigerButton.click();
+		BummerButton.click();
+		Thread.sleep(5000);
+	}
+	// WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(40));
+	// wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.TextView[@text='GREAT']")));
+	// driver.findElement(By.xpath("//android.widget.TextView[@text='GREAT']")).click();
+
+	public void ClickOnGreatButton() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		wait.until(ExpectedConditions.visibilityOf(GreatButton));
+		GreatButton.click();
+	}
+
+	public void ClickOnOkButton() throws InterruptedException {
+		OkButton.click();
+		Thread.sleep(3000);
+	}
+
+}

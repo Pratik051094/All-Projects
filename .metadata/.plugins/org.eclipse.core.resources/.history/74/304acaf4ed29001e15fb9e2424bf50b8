@@ -1,0 +1,34 @@
+package Mobile_Automation_Test;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumBy;
+
+public class TestCalss2 extends BaseClassMA{
+
+	
+	@Test
+	public void LoginTest() {
+		
+		driver.findElement(By.xpath("//android.widget.TextView[@index='4']")).click();
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/registrationLink")).click();
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/fullNameValue")).click();
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/fullNameValue")).sendKeys("Pratik");
+		//.sendKeys("Pratik");
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/emailValue")).click();
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/emailValue")).sendKeys("pmeher@gmail.com");
+		//pmeher@gmail.com
+		//Pratik@05
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/passwordValue")).click();
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/passwordValue")).sendKeys("Pratik@05");
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/confirmPasswordValue")).click();
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/confirmPasswordValue")).sendKeys("Pratik@05");
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/countrySpinner")).click();
+		ScrollIntoText("Italy");
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/securityQuestionOne")).click();
+		ScrollIntoText("Last name of your favorite teacher?");
+		
+		
+	}
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-07-27T05:57:11Z" name="Default suite" finished-at="2023-07-27T05:57:59Z" duration-ms="47875">
+    <groups>
+    </groups>
+    <test started-at="2023-07-27T05:57:11Z" name="Default test" finished-at="2023-07-27T05:57:59Z" duration-ms="47875">
+      <class name="Test.TestClass2">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:Test.TestClass2@d41f816]" started-at="2023-07-27T05:57:11Z" name="ConfigureAppium" finished-at="2023-07-27T05:57:42Z" duration-ms="30517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ConfigureAppium -->
+        <test-method signature="LoginwithAnonymousAccOption()[pri:0, instance:Test.TestClass2@d41f816]" started-at="2023-07-27T05:57:42Z" name="LoginwithAnonymousAccOption" finished-at="2023-07-27T05:57:57Z" duration-ms="15696" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginwithAnonymousAccOption -->
+        <test-method is-config="true" signature="stopdownAppium()[pri:0, instance:Test.TestClass2@d41f816]" started-at="2023-07-27T05:57:57Z" name="stopdownAppium" finished-at="2023-07-27T05:57:59Z" duration-ms="1623" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopdownAppium -->
+      </class> <!-- Test.TestClass2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

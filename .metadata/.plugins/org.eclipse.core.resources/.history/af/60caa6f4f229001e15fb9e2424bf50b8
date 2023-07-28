@@ -1,0 +1,26 @@
+package Mobile_Automation_Test;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumBy;
+
+public class TestCalss2 extends BaseClassMA {
+
+	@Test
+	public void LoginTest() throws InterruptedException {
+
+		driver.findElement(By.xpath("//android.widget.TextView[@index='4']")).click();
+		driver.findElement(By.id("com.alifesoftware.stocktrainer:id/registrationLink")).click();
+		driver.findElement(By.id("com.alifesoftware.stocktrainer:id/inputId_nameValue")).sendKeys("Pratik meher");
+		driver.findElement(By.id("com.alifesoftware.stocktrainer:id/inputId_emailValue")).sendKeys("pmeher@gmail.com");
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/inputId_passwordValue")).sendKeys("Pratik@05");
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/inputId_confirmPasswordValue")).sendKeys("Pratik@05");
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/countrySpinner")).click();
+		ScrollIntoText("Italy");
+		driver.findElement(AppiumBy.id("com.alifesoftware.stocktrainer:id/securityQuestionOne")).click();
+		ScrollIntoText("Last name of your favorite teacher?");
+		
+
+	}
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-07-25T06:59:28Z" name="Default suite" finished-at="2023-07-25T07:02:09Z" duration-ms="161174">
+    <groups>
+    </groups>
+    <test started-at="2023-07-25T06:59:28Z" name="Default test" finished-at="2023-07-25T07:02:09Z" duration-ms="161174">
+      <class name="Mobile_Automation_Test.TestCalss2">
+        <test-method is-config="true" signature="ConfigureAppium()[pri:0, instance:Mobile_Automation_Test.TestCalss2@5f354bcf]" started-at="2023-07-25T06:59:28Z" name="ConfigureAppium" finished-at="2023-07-25T07:01:21Z" duration-ms="113535" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ConfigureAppium -->
+        <test-method signature="LoginTest()[pri:0, instance:Mobile_Automation_Test.TestCalss2@5f354bcf]" started-at="2023-07-25T07:01:21Z" name="LoginTest" finished-at="2023-07-25T07:02:09Z" duration-ms="47586" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTest -->
+      </class> <!-- Mobile_Automation_Test.TestCalss2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

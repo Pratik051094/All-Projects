@@ -1,0 +1,19 @@
+package Test;
+
+import org.testng.annotations.Test;
+
+import Base.BaseClass_TA;
+import PageObjectModel.AnonymousAccount;
+
+
+public class TestClass2 extends BaseClass_TA{
+	
+	@Test 
+	public void CreateAnonymousAcc() {
+		AnonymousAccount anonymousAcc = new AnonymousAccount(driver);
+		anonymousAcc.ClickOnanonymousButton();
+		anonymousAcc.ClickOnCountryName();
+	}
+
+
+}
